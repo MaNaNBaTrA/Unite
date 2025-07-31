@@ -14,7 +14,7 @@ export default function AuthCallback() {
       } = await supabase.auth.getSession()
 
       if (session) {
-        router.replace('/dashboard')
+        router.replace('/')
       } else {
         router.replace('/signin')
       }

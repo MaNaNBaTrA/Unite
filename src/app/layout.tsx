@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import {AuthProvider} from "@/context/authContext";
 
 export const metadata: Metadata = {
   title: "Unite",
@@ -15,9 +16,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="winter"> 
         <body className={`${inter.className} antialiased`}>
+          <AuthProvider>
           {children}
+          </AuthProvider>
       </body>
     </html>
   );
